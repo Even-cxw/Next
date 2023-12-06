@@ -255,8 +255,6 @@ class Children extends Component {
     return <div>I am Children!</div>;
   }
 }
-
 export default Parent;
-
 
 ```
