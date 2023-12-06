@@ -1,10 +1,12 @@
 // import '@/styles/index.css'
+import { Provider } from "react-redux";
+import store from "@/store";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div className="nihao">
+    <Provider store={store}>
       <Component {...pageProps} />
-    </div>
+    </Provider>
   )
 }
 
