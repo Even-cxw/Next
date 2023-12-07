@@ -1,3 +1,14 @@
 export default {
-  num: 0,
+  name: 'count',
+  state: {
+    num: 1
+  },
+  reducers: {
+    updateState(state, payload) {
+      return {
+        ...state,
+        ...payload,
+      };
+    },
+  }
 }
