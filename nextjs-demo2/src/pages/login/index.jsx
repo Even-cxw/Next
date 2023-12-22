@@ -7,9 +7,9 @@ import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 
 const HomePage = () => {
-  const router = useRouter();
-  const dispatch = useDispatch();
-  const [loading, setLoading] = useState(false)
+  // const router = useRouter();
+  // const dispatch = useDispatch();
+  // const [loading, setLoading] = useState(false)
 
   const onFinish = (values) => {
  
@@ -18,11 +18,12 @@ const HomePage = () => {
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
   };
+
   return (
     <div>
       <Head><title>登陆页面</title></Head>
       {/* 页面内容 */}
-      <div className={st.formWrapper}>
+      {/* <div className={st.formWrapper}>
         <div className={st.form}>
           <Form
             name="basic"
@@ -70,7 +71,7 @@ const HomePage = () => {
             </Form.Item>
           </Form>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
