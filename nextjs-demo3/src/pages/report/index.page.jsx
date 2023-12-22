@@ -1,8 +1,8 @@
-import Image from 'next/image'
-import { Button, Switch } from 'antd';
-
-export default function Home() {
-  return (
+'use client';
+import { Button } from 'antd';
+// const { Button } = require('antd');
+function Report() {
+  return(
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div>111</div>
       <div>
@@ -15,3 +15,5 @@ export default function Home() {
     </main>
   )
 }
+
+export default Report

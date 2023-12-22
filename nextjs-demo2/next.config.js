@@ -14,7 +14,7 @@ const mixinsStr = fs.readFileSync(
 
 module.exports = {
   reactStrictMode: false,
-  // pageExtensions: ["page.jsx", "page.js"],
+  pageExtensions: ["page.jsx", "page.js"],
   sassOptions: {
     prependData: varsStr + mixinsStr,
   },

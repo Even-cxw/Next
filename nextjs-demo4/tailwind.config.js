@@ -15,4 +15,8 @@ module.exports = {
     },
   },
   plugins: [],
+  // 解决antd样式被覆盖问题
+  corePlugins: {
+    preflight:false,
+  }
 }
