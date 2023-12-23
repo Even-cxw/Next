@@ -7,7 +7,11 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   value: 0,
 };
-
+ 
+/**
+ * @desc createSlice: 是 Redux Toolkit 中的一个函数和 action creators
+ * @return {Object} 1.reducer  2.actions
+ */
 export const counterSlice = createSlice({
   name: "counter",
   initialState,
