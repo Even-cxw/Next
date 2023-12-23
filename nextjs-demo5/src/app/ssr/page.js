@@ -1,9 +1,15 @@
-import Image from 'next/image'
+"use client"
+import Image from 'next/image';
+
 export default function Home() {
-  console.log('我在哪里输出')
+  // 在客户端渲染时输出
+  if (typeof window !== 'undefined') {
+    console.log('window', window);
+  }
+
   return (
     <main>
       ssr
     </main>
-  )
+  );
 }
