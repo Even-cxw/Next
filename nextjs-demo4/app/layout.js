@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import StyledComponentsRegistry from '../lib/AntdRegistry';
 const inter = Inter({ subsets: ['latin'] })
-import { ReduxProvider } from "./store";
+import { ReduxProvider } from "../store";
 
 export const metadata = {
   title: 'Create Next App',
