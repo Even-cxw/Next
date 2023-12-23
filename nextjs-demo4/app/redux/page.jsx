@@ -3,7 +3,7 @@ import {
   decrement,
   increment,
   selectCounter,
-} from "@store/modules/counterSlice";
+} from "@/store/modules/counterSlice";
 import {  Button } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 
