@@ -6,6 +6,5 @@ https://blog.csdn.net/Joey_Tribiani/article/details/134647892
 
 
 
-
-# nextjs-demo5 
-- redux场景介绍
+# next.js官网课程
+https://nextjs.org/learn

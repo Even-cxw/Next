@@ -1,11 +1,9 @@
 "use client";
 import { useDispatch, useSelector, connect } from "react-redux";
-import { useRouter } from 'next/router';
+import Link from 'next/link'
 
 function CounterControl(props) {
   const dispatch = useDispatch();
-  // 在客户端环境中使用 useRouter
-  const router = typeof window !== 'undefined' ? useRouter() : null;
   const { count, name, report3Age, updataState, gender, report3UpdataState} = props;
 
   const addAge = () => {
@@ -16,12 +14,6 @@ function CounterControl(props) {
   const addCount = () => {
     let newCount =count + 1;
     updataState({count:newCount})
-  }
-
-  const routerGo = () => {
-    if (typeof window !== 'undefined') { 
-      router.push('/report3')
-    }
   }
 
   return (
@@ -41,9 +33,8 @@ function CounterControl(props) {
           加数量
         </button>
         ----
-        <button variant="outlined" onClick={routerGo}>
-          跳转到report3
-        </button>
+        <Link href={`/redux3`}>跳转到report3</Link>
+        
       </div>
     </div>
   );
