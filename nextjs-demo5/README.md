@@ -6,10 +6,16 @@ https://frontend.devrank.cn/traffic-information/7295333636461840410
 https://baijiahao.baidu.com/s?id=1786130053273856819&wfr=spider&for=pc
 https://zhuanlan.zhihu.com/p/664774279
 
+# next.js effect执行reducers
+https://zhuanlan.zhihu.com/p/374246900
 
 
 # redux讲解
 
+- report1 官网写法
+- report2 优化mapState、mapDispatch
+- report3 优化reducer
+- report4 一个页面对应多个store的场景
 
 ## 场景一 reducers改变state更新视图
 ## 场景二  effects调用接口后执行reduces更新视图

@@ -9,7 +9,7 @@ export default {
   name: "report1",
   state: {
     count: 0,
-    age: 18,
+    age: 1,
     name: 'Even'
   },
   // 缺陷：reducers方法多的时候写起来比较麻烦

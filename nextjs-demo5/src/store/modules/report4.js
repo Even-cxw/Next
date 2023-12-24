@@ -1,24 +1,24 @@
 
 
-
+/**
+ * @desc reducers更新sate
+ * 1. state：存放模块状态的地方。
+ * 2. reducers：改变store状态的地方  *注意*⚠️ 必须return个新对象作为新的state
+ */
 export default {
   name: "report4",
-  state: {count: 0},
+  state: {
+    count: 0,
+    age: 4,
+    name: 'Even',
+    gender: '男'
+  },
   reducers: {
-    updateCount: (state, payload) => {
-      console.log('state', state);
-      console.log('payload', payload);
+    updataState(state, payload) {
       return {
         ...state,
-        count: state.count + payload
+        ...payload
       }
-    },
-  },
-  effects: (dispatch) =>({
-    async loadDatta(payload, rootState) {
-      await api().then(res => {
-        dispatch.report.updateCount(res)
-      })
     }
-  })
+  },
 }
