@@ -17,6 +17,7 @@ https://zhuanlan.zhihu.com/p/374246900
 - report3 优化reducer
 - report4 一个页面对应多个store的场景  并测试共享问题
 - report5 effects调用异步接口 - 执行reduces更新视图
+- report6 router路由跳转
 
 
 ## 场景一 reducers改变state更新视图

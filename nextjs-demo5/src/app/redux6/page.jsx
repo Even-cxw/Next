@@ -1,10 +1,10 @@
 "use client";
 import { useDispatch, useSelector, connect } from "react-redux";
-
+import { useRouter } from 'next/navigation'
 function CounterControl(props) {
   const dispatch = useDispatch();
   const { count, name, age, updataState, gender} = props;
-
+  const router = useRouter()
   const addAge = () => {
     let newAge =age + 1;
     updataState({age:newAge})
@@ -13,6 +13,10 @@ function CounterControl(props) {
   const addCount = () => {
     let newCount =count + 1;
     updataState({count:newCount})
+  }
+
+  const routerGo = () => {
+    router.push('/redux4', { scroll: false })
   }
 
   return (
@@ -30,6 +34,10 @@ function CounterControl(props) {
         ----
         <button variant="outlined" onClick={addCount}>
           加数量
+        </button>
+        ----
+        <button variant="outlined" onClick={routerGo}>
+          uerRouter路由跳转
         </button>
       </div>
     </div>
