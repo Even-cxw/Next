@@ -6,7 +6,7 @@
  * 2. reducers：改变store状态的地方  *注意*⚠️ 必须return个新对象作为新的state
  */
 export default {
-  name: "report4",
+  name: "report8",
   state: {
     count: 0,
     age: 4,
