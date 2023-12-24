@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-demo2",
+  "name": "nextjs-demo4",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,23 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@ant-design/icons": "^5.2.6",
-    "@rematch/core": "^2.2.0",
-    "antd": "^5.12.1",
-    "next": "14.0.3",
+    "@ant-design/cssinjs": "^1.18.1",
+    "@reduxjs/toolkit": "^2.0.1",
+    "antd": "^5.12.5",
+    "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",
-    "react-redux": "^9.0.1",
-    "redux": "^5.0.0",
-    "resolve-url-loader": "^5.0.0",
+    "react-redux": "^9.0.4",
     "sass": "^1.69.5"
   },
   "devDependencies": {
+    "@types/node": "20.10.5",
+    "@types/react": "18.2.45",
     "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.4",
     "postcss": "^8",
-    "tailwindcss": "^3.3.0"
-  },
-  "engines": {
-    "node": ">=16.8.0"
+    "tailwindcss": "^3.3.0",
+    "typescript": "5.3.3"
   }
 }
