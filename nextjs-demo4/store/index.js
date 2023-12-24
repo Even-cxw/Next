@@ -1,7 +1,7 @@
 "use client";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import counterReducer from "./modules/counterSlice";
 import { Provider } from "react-redux";
+import counterReducer from "./modules/counterSlice";
 
 /**
  * @desc @reduxjs/toolkit依赖
@@ -9,6 +9,7 @@ import { Provider } from "react-redux";
  * @configureStore 用于创建 Redux store
  */
 const rootReducer = combineReducers({
+  //conter: redux name
   counter: counterReducer,
   //add all your reducers here
 });

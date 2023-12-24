@@ -1,17 +1,42 @@
 //store.jsx
-
 "use client";
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import counterReducer from "./modules/counterSlice";
 import { Provider } from "react-redux";
+import { init} from "@rematch/core";
 
-const rootReducer = combineReducers({
-  counter: counterReducer,
-  //add all your reducers here
-});
+// 模拟接口
+let api = function() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(12)
+    }, 1000)
+  })
+}
 
-export const store = configureStore({
-  reducer: rootReducer,
+// 模块一
+const report = {
+  name: "report",
+  state: {count: 0},
+  reducers: {
+    updateCount: (state, payload) => {
+      console.log('state', state);
+      console.log('payload', payload);
+      return {
+        ...state,
+        count: state.count + payload
+      }
+    },
+  },
+  effects: (dispatch) =>({
+    async loadDatta(payload, rootState) {
+      await api().then(res => {
+        dispatch.report.updateCount(res)
+      })
+    }
+  })
+}
+
+export const store = init({
+  models: { report }
 });
 
 export function ReduxProvider({ children }) {
