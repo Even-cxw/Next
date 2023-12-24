@@ -2,41 +2,19 @@
 "use client";
 import { Provider } from "react-redux";
 import { init} from "@rematch/core";
+import report1 from './modules/report1'
+import report2 from './modules/report2'
+import report3 from './modules/report3'
+import report4 from './modules/report4'
 
-// 模拟接口
-let api = function() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(12)
-    }, 1000)
-  })
-}
-
-// 模块一
-const report = {
-  name: "report",
-  state: {count: 0},
-  reducers: {
-    updateCount: (state, payload) => {
-      console.log('state', state);
-      console.log('payload', payload);
-      return {
-        ...state,
-        count: state.count + payload
-      }
-    },
-  },
-  effects: (dispatch) =>({
-    async loadDatta(payload, rootState) {
-      await api().then(res => {
-        dispatch.report.updateCount(res)
-      })
-    }
-  })
-}
 
 export const store = init({
-  models: { report }
+  models: { 
+    report1,
+    report2,
+    report3,
+    report4,
+  }
 });
 
 export function ReduxProvider({ children }) {

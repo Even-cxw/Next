@@ -10,12 +10,6 @@ https://zhuanlan.zhihu.com/p/664774279
 
 # redux讲解
 
-1. state：存放模块状态的地方。
-
-2. reducers：改变store状态的地方  *注意*⚠️ 必须return个新对象作为新的state
-
-3. 
-
 
 ## 场景一 reducers改变state更新视图
 ## 场景二  effects调用接口后执行reduces更新视图

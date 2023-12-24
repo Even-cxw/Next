@@ -3,59 +3,39 @@ import { useDispatch, useSelector, connect } from "react-redux";
 
 function CounterControl(props) {
   const dispatch = useDispatch();
-  const {count, loadDatta, updateCount} = props;
-  // console.log('props',props);
-  const handleChangeCounter = (type) => {
-    loadDatta().then(res => {
-      // console.log('count', count);
-      debugger;
-    })
-  };
+  const { count, name, age } = props;
 
   return (
     <div>
-      <h1>场景一： redux -  </h1>
-      <h2>1. effects中调用接口后执行reducers</h2>
-      <h2>2.reducers更新视图</h2>
-      <div variant="h1">{count}</div>
+      <h1>场景一： report1  </h1>
+      <h2>1. reducers更新sate</h2>
+      <br></br>
+      <div variant="h1">姓名:{name}</div>
+      <div variant="h1">年龄:{age}</div>
+      <div variant="h1">数量:{count}</div>
       <div>
-        <button variant="outlined" onClick={() => handleChangeCounter("ADD")}>
-          ADD
+        <button variant="outlined" onClick={() =>{dispatch.report1.updateAge(1)}}>
+          加年龄
         </button>
-        <button
-          variant="outlined"
-          onClick={() => handleChangeCounter("MINUS")}
-          sx={{ ml: 2 }}
-        >
-          MINUS
+        ----
+        <button variant="outlined" onClick={() => {dispatch.report1.updateCount(1)}}>
+          加数量
         </button>
       </div>
     </div>
   );
 }
 
-// 官网写法
-// const mapStateToProps = (state) => ({
-//   count: state.report.count
-// })
-
-// 升级写法
-const mapStateToProps = ({report}) => ({
-  ...report
+// 缺陷：modules状态多的时候写起来比较麻烦
+const mapStateToProps = (state) => ({
+  count: state.report1.count,
+  name: state.report1.name,
+  age: state.report1.age,
 })
 
-// 官网写法
-// const mapDispatchToProps = (dispatch) => ({
-//   countUpBy: dispatch.report.upBy,
-//   apicountUpBy: dispatch.report.loadDatta,
-// })
-// 升级写法
-const mapDispatchToProps = ({report}) => {
-  console.log('report',report)
-  return {
-    ...report
-  }
-}
-
+const mapDispatchToProps = (dispatch) => ({
+  updateCount: dispatch.report1.updateCount,
+  updateAge:dispatch.report1.updateAge
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(CounterControl)
