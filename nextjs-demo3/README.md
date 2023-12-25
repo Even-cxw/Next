@@ -10,9 +10,12 @@
 
 
 ## redux讲解相关目录层级
-- report1 官网写法
-- report2 优化mapState、mapDispatch
-- report3 优化reducer
-- report4 一个页面对应多个store的场景  并测试共享问题
-- report5 effects调用异步接口 - 执行reduces更新视图
-- report6 router路由跳转
+- redux1 官网写法
+- redux2 优化mapState、mapDispatch
+- redux3 优化reducer
+- redux4 一个页面对应多个store的场景  并测试共享问题
+- redux5 effects调用异步接口 - 执行reduces更新视图
+
+## rotuer讲解
+- router1 router路由跳转、路由组
+- router2 动态路由
