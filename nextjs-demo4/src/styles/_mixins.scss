@@ -1,0 +1,31 @@
+@mixin ff-en() {
+  font-family: "ff-en";
+}
+
+@mixin ff-title() {
+  font-family: "ff-title";
+}
+
+@mixin ff-yahei() {
+  font-family: "ff-yahei";
+}
+
+@mixin font-medium() {
+  font-weight: 500;
+}
+
+@mixin font-bold() {
+  font-weight: 600;
+}
+
+@mixin data-table-header() {
+  background-color: $color-bg-grayer;
+  padding: 12px 24px;
+  @include font-medium();
+}
+
+@mixin data-table-body() {
+  padding: 16px 24px;
+  display: grid;
+  gap: 8px 16px;
+}
