@@ -13,7 +13,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <ReduxProvider>
-          {children}
+            <h1>我是全局layout</h1>
+            <br></br>
+            {children}
         </ReduxProvider>
       </body>
     </html>
