@@ -21,6 +21,7 @@ export default function RootLayout({ children, auth, modal }) {
             {modal}
           </StyledComponentsRegistry>
         </Suspense>
+     
       </body>
     </html>
   )
