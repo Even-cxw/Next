@@ -2,6 +2,13 @@
 const path = require('path')
 
 const nextConfig = {
+  reactStrictMode: true,
+  images: {
+    domains: ['pbs.twimg.com'],
+  },
+  experimental: {
+    appDir: true,
+  },
   sassOptions: {
     sassOptions: {
       includePaths: [
