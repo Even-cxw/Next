@@ -1,13 +1,12 @@
+// import Frame from '../../../../components/frame/Frame'
+import Modal from '../../../components/modal/Modal'
+import Login from '../../login/page';
 
-// import Login from '@/app/login'
-import Modal from '@/components/modal/Modal'
-import Fram from '@/components/frame/Frame'
-
-export default function PhotoModal() {
-  debugger;
+export default function PhotoModal({ params: { id: photoId } }) {
   return (
     <Modal>
-      <Fram/>
+      {/* <Frame photo={photo} /> */}
+      <Login></Login>
     </Modal>
   )
 }
