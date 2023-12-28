@@ -1,7 +1,8 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
 import StyledComponentsRegistry from '@/lib/AntdRegistry';
-
+import { Suspense } from 'react'
+import Loading from '@/app/loading' 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -13,9 +14,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <StyledComponentsRegistry>
-          {children}
-        </StyledComponentsRegistry>
+        <Suspense fallback={<Loading />}>
+          <StyledComponentsRegistry> 
+            {children}
+          </StyledComponentsRegistry>
+        </Suspense>
       </body>
     </html>
   )

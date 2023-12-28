@@ -13,7 +13,7 @@ export default function Login() {
   const [loading, setLoading] = useState(false)
   // const dispatch = useDispatch();
   // const { loading, launchRequest: login } = usePostRequest(urls.apiLogin);
-
+  // throw new Error('页面出错了')
   const onFinish = (values) => {
     login(values)
       .then((token) => {
