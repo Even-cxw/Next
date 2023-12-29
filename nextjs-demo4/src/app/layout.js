@@ -17,7 +17,7 @@ export default function RootLayout({ children, auth, modal }) {
   })
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body>
         <Suspense fallback={<Loading />}> 
           <StyledComponentsRegistry>
             {children}
