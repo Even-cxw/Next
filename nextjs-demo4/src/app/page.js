@@ -1,14 +1,17 @@
+"use client"
 import Link from 'next/link'
-import swagPhotos from '../photos'
-import Image from 'next/image'
-
+import { useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 export default function Home() {
-  const photos = swagPhotos
+  const router = useRouter();
+  useEffect(() => {
+    let token = localStorage.getItem('nextToken')
+    if (!token) {
+      router.push('/login', { scroll: false })
+    } else {
+      router.push('/dashboard', { scroll: false })
+    }
+  }, [])
 
-  return (
-    <main className="container mx-auto">
-      <h1 className="text-center text-4xl font-bold m-10">NextGram</h1>
-      <Link href={`/login`}>denglu</Link>
-    </main>
-  )
+  return ''
 }

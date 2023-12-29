@@ -1,5 +1,5 @@
 import { Suspense } from 'react'
-import Loading from '@/app/loading' 
+import Loading from '@/app/dashboard/loading' 
 import Link from 'next/link'
 
 export default function Posts() {
