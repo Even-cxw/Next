@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    // Rematch 经常指定this上下文，导致 TS 错误。
+    "noImplicitThis": false,
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
