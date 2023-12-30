@@ -40,6 +40,18 @@ const DMenu = () => {
         key: "systemManage",
         icon: <VideoCameraOutlined />,
         label: "系统管理",
+        children: [
+          {
+            key: "dashboard/userManager",
+            icon: <BorderOuterOutlined />,
+            label: "用户管理",
+          },
+          {
+            key: "dashboard/roleManager",
+            icon: <PlayCircleOutlined />,
+            label: "角色管理",
+          },
+        ],
       },
     ])
   }, [])

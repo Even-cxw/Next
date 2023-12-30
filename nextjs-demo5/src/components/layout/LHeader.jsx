@@ -24,10 +24,10 @@ const DHeader = (props) => {
 
   return (
     <Header
-    style={{
-      padding: 0,
-      background: colorBgContainer,
-    }}
+      style={{
+        padding: 0,
+        background: colorBgContainer,
+      }}
     >
     <Button
       type="text"
@@ -39,7 +39,18 @@ const DHeader = (props) => {
         height: 64,
       }}
     />
-    <LogoutOutlined onClick={onExit}  style={{marginLeft: 'auto'}}/>
+    <Button
+      type="text"
+      icon={<LogoutOutlined/>}
+      onClick={onExit}
+      className="float-right"
+      style={{
+        fontSize: '16px',
+        width: 64,
+        height: 64,
+      }}
+    />
+
   </Header>
   );
 };
