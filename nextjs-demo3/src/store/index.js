@@ -11,7 +11,6 @@ import report6 from './modules/report6'
 import report7 from './modules/report7'
 import report8 from './modules/report8'
 
-
 export const store = init({
   models: { 
     report1,
