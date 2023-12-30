@@ -1,14 +1,9 @@
 "use client"
 import React, { useState } from 'react';
-import {
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-} from '@ant-design/icons';
 import { Layout, Menu, Button, theme } from 'antd';
-const { Header, Sider, Content } = Layout;
+import DHeader from '@/components/layout/LHeader';
+import DMenu from '@/components/layout/LMenu';
+const { Sider, Content } = Layout;
 const App = ({children}) => {
   const [collapsed, setCollapsed] = useState(false);
   const {
@@ -20,53 +15,15 @@ const App = ({children}) => {
       <Sider 
         trigger={null} 
         collapsible 
-        collapsed={collapsed}   
+        collapsed={collapsed}
         style={{
             background: colorBgContainer,
         }}>
         <div className="demo-logo-vertical"  style={{height: '60px'}}/>
-        <Menu
-          theme="light"
-          mode="inline"
-          defaultSelectedKeys={['1']}
-          items={[
-            {
-              key: '1',
-              icon: <UserOutlined />,
-              label: 'nav 1',
-            },
-            {
-              key: '2',
-              icon: <VideoCameraOutlined />,
-              label: 'nav 2',
-            },
-            {
-              key: '3',
-              icon: <UploadOutlined />,
-              label: 'nav 3',
-            },
-          ]}
-        />
+        <DMenu />
       </Sider>
       <Layout>
-        <Header
-          style={{
-            padding: 0,
-            background: colorBgContainer,
-          }}
-        >
-          <Button
-            type="text"
-            icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-            onClick={() => setCollapsed(!collapsed)}
-            style={{
-              fontSize: '16px',
-              width: 64,
-              height: 64,
-            }}
-          />
-        </Header>
-        
+        <DHeader/>
         <Content
           style={{
             margin: '24px 0',
