@@ -7,10 +7,12 @@ import {
 } from '@ant-design/icons';
 import { Layout, Button, theme } from 'antd';
 import { useRouter } from 'next/navigation';
+import { connect } from 'react-redux';
 const { Header} = Layout;
-const DHeader = () => {
+const DHeader = (props) => {
   const router = useRouter();
-  const [collapsed, setCollapsed] = useState(false);
+  // const [collapsed, setCollapsed] = useState(false);
+  const {collapsed, updataState} = props;
   const {
     token: { colorBgContainer },
   } = theme.useToken();
@@ -30,7 +32,7 @@ const DHeader = () => {
     <Button
       type="text"
       icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-      onClick={() => setCollapsed(!collapsed)}
+      onClick={() => updataState({collapsed:!collapsed})}
       style={{
         fontSize: '16px',
         width: 64,
@@ -41,4 +43,9 @@ const DHeader = () => {
   </Header>
   );
 };
-export default DHeader;
+// export default DHeader;
+
+export default connect(
+  ({layout}) =>({...layout}),
+  ({layout}) =>({...layout})  
+)(DHeader)

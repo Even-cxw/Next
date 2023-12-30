@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import { Layout, Menu, Button, theme } from 'antd';
 import DHeader from '@/components/layout/LHeader';
 import DMenu from '@/components/layout/LMenu';
+import { connect } from 'react-redux';
 const { Sider, Content } = Layout;
-const App = ({children}) => {
-  const [collapsed, setCollapsed] = useState(false);
+const App = ({children, collapsed}) => {
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
@@ -44,4 +44,8 @@ const App = ({children}) => {
     </Layout>
   );
 };
-export default App;
+
+export default connect(
+  ({layout}) =>({...layout}),
+  ({layout}) =>({...layout})  
+)(App)
