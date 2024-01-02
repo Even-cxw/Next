@@ -8,15 +8,30 @@ import { useRouter } from "next/navigation";
 // import urls from "@/services/urls";
 import React, { useState } from "react";
 
+const getData = async(slug) => {
+  const res = await fetch('http://localhost:3005/api/login', {
+    method: 'post',
+    body: JSON.stringify({
+      name: 'Even',
+      age: '12'
+    })
+  })
+  if (!res.ok) {
+    throw new Error("somethind went wrong")
+  }
+  return res.json();
+}
+
 export default function Login() {
   const router = useRouter();
   const [loading, setLoading] = useState(false)
   // const dispatch = useDispatch();
   // const { loading, launchRequest: login } = usePostRequest(urls.apiLogin);
   // throw new Error('页面出错了')
-  const onFinish = (values) => {
+  const onFinish = async (values) => {
     localStorage.setItem('nextToken', values.account);
-    router.push("/");
+    const post = await getData()
+    // router.push("/");
 
     // login(values)
     //   .then((token) => {
