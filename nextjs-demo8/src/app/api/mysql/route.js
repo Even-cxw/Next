@@ -71,8 +71,13 @@ export async function PUT(request) {
 
   try {
     console.log("111111111111")
-    await pool.query("UPDATE router SET name = ? WHERE id = ?", ['表单3', 2]);
-    // await pool.query("UPDATE router SET name = '表单4' WHERE id = 2");
+    let params = {
+      name: 'name',
+      value: '表单',
+      id: 2
+    }
+    // await pool.query("UPDATE router SET ? = ? WHERE id = ?", ['表单3', 2]);
+    await pool.query(`UPDATE router SET ${params.name} = '${params.value}' WHERE id = 2`);
     return NextResponse.json({
       // ...data,
       // id: params.id,
